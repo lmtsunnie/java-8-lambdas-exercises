@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.sunnie.java8.examples.common.AssertEquals.assertEquals;
-import static com.sunnie.java8.examples.common.PrintList.printList;
+import static com.sunnie.java8.examples.common.Print.printList;
 import static java.lang.Character.isDigit;
 
 public class FindStringListBeginWithNum11 {

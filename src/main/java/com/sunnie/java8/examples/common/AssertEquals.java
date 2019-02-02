@@ -1,5 +1,6 @@
 package com.sunnie.java8.examples.common;
 
+import java.lang.annotation.Target;
 import java.util.List;
 
 public class AssertEquals {
@@ -10,5 +11,12 @@ public class AssertEquals {
             }
         }
         return true;
+    }
+
+    public static <T> boolean assertEquals(T t1, T t2) {
+        if (t1.equals(t2)) {
+            return true;
+        }
+        return false;
     }
 }

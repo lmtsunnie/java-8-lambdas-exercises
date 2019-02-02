@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.sunnie.java8.examples.common.AssertEquals.assertEquals;
-import static com.sunnie.java8.examples.common.PrintList.printList;
+import static com.sunnie.java8.examples.common.Print.printList;
 
 public class StringToList7 {
     public static List<String> stringToList7(String... strings) {

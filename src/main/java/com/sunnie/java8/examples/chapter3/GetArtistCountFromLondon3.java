@@ -3,7 +3,7 @@ package com.sunnie.java8.examples.chapter3;
 import com.sunnie.java8.examples.common.Artist;
 import java.util.List;
 
-import static com.sunnie.java8.examples.common.GenerateArtists.generateArtists;
+import static com.sunnie.java8.examples.common.GenerateData.generateArtists;
 
 public class GetArtistCountFromLondon3 {
     public static void getArtistCountFromLondon3() {
