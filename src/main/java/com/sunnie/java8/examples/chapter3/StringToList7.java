@@ -6,16 +6,17 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.sunnie.java8.examples.common.AssertEquals.assertEquals;
-
+import static com.sunnie.java8.examples.common.PrintList.printList;
 
 public class StringToList7 {
-    public static void stringToList7() {
-        List<String> collected = Stream.of("a", "b", "c")  //  多个字符串 -> Stream
-               .collect(Collectors.toList()); // Stream -> 列表
-        assertEquals(Arrays.asList("a", "b", "c"), collected);
+    public static List<String> stringToList7(String... strings) {
+        return Stream.of(strings)  //  多个字符串 -> Stream
+                .collect(Collectors.toList()); // Stream -> 列表
     }
 
     public static void main(String[] args) {
-        stringToList7();
+        List<String> stringList = stringToList7("a","b","c");
+        printList(stringList);
+        System.out.println(assertEquals(Arrays.asList("a","b","c"), stringList));
     }
 }
