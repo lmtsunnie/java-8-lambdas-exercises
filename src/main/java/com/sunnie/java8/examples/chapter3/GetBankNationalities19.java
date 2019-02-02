@@ -11,7 +11,7 @@ import static com.sunnie.java8.examples.common.Print.printSet;
 
 public class GetBankNationalities19 {
     public static Set<String> getBankNationalities19(Album album) {
-        return album.getMusicians().stream()
+        return album.getMusicians()
                 .filter(artist -> artist.getName().startsWith("The"))
                 .map(Artist::getNationality)
                 .collect(Collectors.toSet());
