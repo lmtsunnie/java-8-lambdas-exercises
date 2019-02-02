@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import static com.sunnie.java8.examples.common.GenerateData.generateAlbum;
 import static com.sunnie.java8.examples.common.Print.printSet;
 
-public class getBankNationalities19 {
+public class GetBankNationalities19 {
     public static Set<String> getBankNationalities19(Album album) {
         return album.getMusicians().stream()
                 .filter(artist -> artist.getName().startsWith("The"))

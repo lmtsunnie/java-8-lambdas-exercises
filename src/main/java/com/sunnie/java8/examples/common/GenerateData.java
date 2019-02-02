@@ -14,7 +14,9 @@ public class GenerateData {
         Artist artist3 = new Artist(faker.name().fullName(), Lists.newArrayList(), faker.address().country());
         Artist artist4 = new Artist("The bank", Lists.newArrayList("mem1","mem2","mem3"), faker.address().country());
         Artist artist5 = new Artist("The bank2", Lists.newArrayList("Mem1","Mem2","Mem3"), faker.address().country());
-        return Lists.newArrayList(artist1, artist2, artist3, artist4, artist5);
+        Artist artist6 = new Artist(faker.name().fullName(), Lists.newArrayList(), "London");
+        Artist artist7 = new Artist(faker.name().fullName(), Lists.newArrayList(), "London");
+        return Lists.newArrayList(artist1, artist2, artist3, artist4, artist5, artist6, artist7);
     }
 
     public static List<Track> generateTracks() {
