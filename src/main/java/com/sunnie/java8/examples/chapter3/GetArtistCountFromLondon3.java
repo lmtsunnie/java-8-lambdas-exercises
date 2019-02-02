@@ -5,8 +5,8 @@ import java.util.List;
 
 import static com.sunnie.java8.examples.common.GenerateArtists.generateArtists;
 
-public class GetArtistCountFromLondon1 {
-    public static void getArtistCountFromLondon2() {
+public class GetArtistCountFromLondon3 {
+    public static void getArtistCountFromLondon3() {
         List<Artist> allArtists = generateArtists();
         long count = allArtists.stream().filter(artist -> {
             System.out.println(artist.getName());
@@ -25,7 +25,7 @@ public class GetArtistCountFromLondon1 {
 
 
     public static void main(String[] args) {
-        getArtistCountFromLondon2();
+        getArtistCountFromLondon3();
         System.out.println("====");
         getArtistFromLondon5();
     }
