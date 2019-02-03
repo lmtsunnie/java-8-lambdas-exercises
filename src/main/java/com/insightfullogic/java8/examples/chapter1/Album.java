@@ -41,7 +41,7 @@ public final class Album implements Performance {
     }
 
     /**
-     * @return the tracks
+     * @return the trackStream
      */
     public Stream<Track> getTracks() {
         return tracks.stream();
@@ -55,7 +55,7 @@ public final class Album implements Performance {
     }
 
     /**
-     * @return the musicians
+     * @return the musicianStream
      */
     public Stream<Artist> getMusicians() {
         return musicians.stream();

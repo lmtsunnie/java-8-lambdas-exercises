@@ -8,12 +8,20 @@ import java.util.stream.Stream;
 @Data
 public class Album {
     private String name;
-    private Stream<Track> tracks;
-    private Stream<Artist> musicians;
+    private List<Track> trackList;
+    private List<Artist> musicianList;
 
-    public Album(String name, List<Track> tracks, List<Artist> musicians) {
+    public Album(String name, List<Track> trackList, List<Artist> musicianList) {
         this.name = name;
-        this.tracks = tracks.stream();
-        this.musicians = musicians.stream();
+        this.trackList = trackList;
+        this.musicianList = musicianList;
+    }
+
+    public Stream<Track> getTrackStream() {
+        return trackList.stream();
+    }
+
+    public Stream<Artist> getMusicianStream() {
+        return musicianList.stream();
     }
 }

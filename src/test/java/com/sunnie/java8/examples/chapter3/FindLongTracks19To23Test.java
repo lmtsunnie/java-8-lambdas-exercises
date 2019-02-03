@@ -1,7 +1,7 @@
-package com.insightfullogic.java8.examples.chapter3;
+package com.sunnie.java8.examples.chapter3;
 
-import com.insightfullogic.java8.examples.chapter1.Album;
-import com.insightfullogic.java8.examples.chapter1.SampleData;
+import com.sunnie.java8.examples.common.Album;
+import com.sunnie.java8.examples.common.SampleData;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -14,16 +14,15 @@ import static java.util.Collections.unmodifiableList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class RefactorTest {
-
+public class FindLongTracks19To23Test {
     @Test
-    public void allStringJoins() {
-        List<Supplier<Refactor.LongTrackFinder>> finders = Arrays.asList(
-            Refactor.Step0::new,
-            Refactor.Step1::new,
-            Refactor.Step2::new,
-            Refactor.Step3::new,
-            Refactor.Step4::new
+    public void testFindLongTracks() {
+        List<Supplier<FindLongTracks19To23.LongTrackFinder>> finders = Arrays.asList(
+                FindLongTracks19To23.FindLongTracks19::new,
+                FindLongTracks19To23.FindLongTracks20::new,
+                FindLongTracks19To23.FindLongTracks21::new,
+                FindLongTracks19To23.FindLongTracks22::new,
+                FindLongTracks19To23.FindLongTracks23::new
         );
 
         List<Album> albums = unmodifiableList(asList(SampleData.aLoveSupreme, SampleData.sampleShortAlbum));
@@ -32,7 +31,7 @@ public class RefactorTest {
         finders.forEach(finder -> {
             System.out.println("Testing: " + finder.toString());
 
-            Refactor.LongTrackFinder longTrackFinder = finder.get();
+            FindLongTracks19To23.LongTrackFinder longTrackFinder = finder.get();
             Set<String> longTracks = longTrackFinder.findLongTracks(albums);
 
             assertEquals("[Acknowledgement, Resolution]", longTracks.toString());
@@ -42,5 +41,4 @@ public class RefactorTest {
             assertTrue(longTracks.isEmpty());
         });
     }
-
 }
