@@ -10,4 +10,8 @@ public class Track {
         this.name = name;
         this.length = length;
     }
+
+    public Track copy() {
+        return new Track(name, length);
+    }
 }

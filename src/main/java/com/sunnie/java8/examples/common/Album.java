@@ -5,6 +5,8 @@ import lombok.Data;
 import java.util.List;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
+
 @Data
 public class Album {
     private String name;
@@ -23,5 +25,15 @@ public class Album {
 
     public Stream<Artist> getMusicianStream() {
         return musicianList.stream();
+    }
+
+    public Artist getMainMusician() {
+        return musicianList.get(0);
+    }
+
+    public Album copy() {
+        List<Track> tracks = getTrackStream().map(Track::copy).collect(toList());
+        List<Artist> musicians = getMusicianStream().map(Artist::copy).collect(toList());
+        return new Album(name, tracks, musicians);
     }
 }

@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
+
 @Data
 public class Artist {
     private String name;
@@ -31,11 +33,22 @@ public class Artist {
         return members.stream();
     }
 
+
+    public boolean isSolo() {
+        return members.isEmpty();
+    }
+
     public boolean isFrom(String nationality) {
-        if (nationality.equals(this.nationality)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.nationality.equals(nationality);
+    }
+
+    /*@Override
+    public String toString() {
+        return getName();
+    }*/
+
+    public Artist copy() {
+        List<Artist> members = getMemberStream().map(Artist::copy).collect(toList());
+        return new Artist(name, members, nationality);
     }
 }
